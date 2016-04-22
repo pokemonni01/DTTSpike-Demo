@@ -20,10 +20,7 @@ public class ControllLeftSpike : MonoBehaviour {
 		velocity.x = forwardSpeed * direction * Time.deltaTime;
 		velocity = Vector3.ClampMagnitude (velocity, forwardSpeed);
 		gameObject.transform.position += velocity;
-		if( gameObject.transform.position.x > 0 )
-			gameObject.transform.position = new Vector3(0, gameObject.transform.position.x, gameObject.transform.position.z);
-		if( gameObject.transform.position.x < -0.6 )
-			gameObject.transform.position = new Vector3(-0.6f, gameObject.transform.position.x, gameObject.transform.position.z);
+		transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, -0.6F, -0.1F), 0, 0);
 	}
 
 	void Show() {

@@ -93,6 +93,7 @@ public class GamePlay : MonoBehaviour {
 //		showResultState = false;
 		float timeDiff = Time.time - startTimeAfterDead;
 		if (timeDiff >= 3) {
+			showResultState = false;
 			resultObject.GetComponent<ResultState> ().Show ();
 			bird.SetActive (false);
 			if (interstitial.IsLoaded()) {
